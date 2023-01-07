@@ -9,7 +9,7 @@
 ### 📺 Latest Youtube Videos
 <!-- YOUTUBE:START -->
 - [10 interesting function graphs part1](https://youtu.be/Yq5BCsMvo1E)
-- [What is Math Graph Art?]([https://www.youtube.com/watch?v=BFctwS5gt2w](https://youtu.be/UQxgdIKmCGY))
+- [What is Math Graph Art?](https://youtu.be/UQxgdIKmCGY)
 - [SCP-910-JP](https://youtu.be/j_VcA_6CTe0)
 <!-- YOUTUBE:END -->
 
