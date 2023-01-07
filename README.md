@@ -6,6 +6,15 @@
 - I am posting about Math Graph Art.
 - I am a beginner who has been coding for less than 3 years.
 
+### 📺 Latest Youtube Videos
+<!-- YOUTUBE:START -->
+- [10 interesting function graphs part1](https://youtu.be/Yq5BCsMvo1E)
+- [What is Math Graph Art?]([https://www.youtube.com/watch?v=BFctwS5gt2w](https://youtu.be/UQxgdIKmCGY))
+- [SCP-910-JP](https://youtu.be/j_VcA_6CTe0)
+<!-- YOUTUBE:END -->
+
+---
+
 ### Connect with me:
 
 [<img align="left" alt="TETH_Main | YouTube" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/youtube.svg" />][youtube]
@@ -16,7 +25,6 @@
 
 <br />
 
----
 
 [twitter]: https://twitter.com/TETH_Main
 [youtube]: https://www.youtube.com/@TETH_Main
