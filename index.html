@@ -1,12 +1,286 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="ja">
+
 <head>
-    <title>てきちょくのWebアプリ</title>
-    <meta property="og:title" content="創る、魅せる。関数アート | Math Graph Art" />
-    <link rel="icon" href="favicon.ico">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>関数アート</title>
+  <meta name="description" content="数式で描くアートの世界へ。初心者向けに体験・ギャラリー・学びの入り口を提供。" />
+  <meta property="og:title" content="関数アート" />
+  <meta property="og:description" content="数式で描くアートの世界へ。" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body>
-    <h1>アイコンリンクのテスト</h1>
-    <p>このページには、favicon.icoが設定されています。</p>
+
+<body class="theme-dark">
+  <!-- 全画面の背景動画 -->
+  <div class="bg-video-wrap" aria-hidden="true">
+    <video class="bg-video" autoplay muted loop playsinline preload="auto">
+      <source src="assets/background.mp4" type="video/mp4" />
+    </video>
+    <div class="bg-video-overlay"></div>
+  </div>
+  <!-- 最初に表示するデモ（角丸モーダル） -->
+  <div id="intro-video" class="intro hidden" role="dialog" aria-modal="true" aria-label="デモ動画">
+    <div class="intro__backdrop"></div>
+    <div class="intro__panel">
+      <button class="intro__close" aria-label="閉じる">
+        <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M1 1 L23 23 M1 23 L23 1" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+      <div class="intro__media">
+        <!-- YouTube 横向き用 -->
+        <iframe class="intro__frame intro__frame--landscape" title="関数アートデモ（横）"
+          src="https://www.youtube.com/embed/1IcMlf7pQQ0?autoplay=1&mute=1&controls=0&loop=1&playlist=1IcMlf7pQQ0&playsinline=1&rel=0"
+          frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen>
+        </iframe>
+        <!-- YouTube 縦向き用 -->
+        <iframe class="intro__frame intro__frame--portrait" title="関数アートデモ（縦）"
+          src="https://www.youtube.com/embed/wHolo3aUtKE?autoplay=1&mute=1&controls=0&loop=1&playlist=wHolo3aUtKE&playsinline=1&rel=0"
+          frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen>
+        </iframe>
+      </div>
+      <div class="intro__fallback">動画を読み込めませんでした</div>
+    </div>
+  </div>
+
+  <!-- ページネーション型セクション -->
+  <main id="pages" class="pages">
+    <!-- Page 0: ヒーロー -->
+    <section class="page page--hero" data-page="0" aria-label="イントロ">
+      <div class="hero__center">数式で描く<span class="br-mobile"></span>関数アートの世界へ</div>
+      <div class="hero__cta">
+        <button class="cta-wide" data-action="next" aria-label="今すぐ見る">
+          <span class="cta-wide__label">今すぐ見る</span>
+          <svg class="cta-wide__chevron" viewBox="0 0 400 100" aria-hidden="true">
+            <path d="M10 20 L200 90 L390 20" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Page 1: ギャラリー -->
+    <section class="page page--gallery" data-page="1" aria-label="ギャラリー">
+      <div class="page__index">01</div>
+      <h2 class="page__title">ギャラリー</h2>
+      <div class="carousel" id="gallery">
+        <div class="carousel__track">
+          <a class="card" href="https://www.desmos.com/calculator/plcgxuggwb" target="_blank" rel="noopener">
+            <video class="card__video" muted loop autoplay playsinline>
+              <source src="https://www.desmos.com/art-contest-assets/19-the-fractal-milky-way.webm" type="video/webm" />
+            </video>
+            <span>The Fractal Milky Way</span>
+          </a>
+          <a class="card" href="https://www.desmos.com/calculator/bngrkvjs9c" target="_blank" rel="noopener">
+            <img src="https://www.desmos.com/calc_thumbs/production/bngrkvjs9c.png" alt="Desmos ギャラリー2" />
+            <span>夏が終わる</span>
+          </a>
+          <a class="card" href="https://www.desmos.com/calculator/0c0ec8e858" target="_blank" rel="noopener">
+            <img
+              src="https://www.desmos.com/calc_thumbs/production/version/0c0ec8e858/92ae7830-b082-11f0-833b-673d6c0195da.png"
+              alt="Desmos ギャラリー3" />
+            <span>卒業</span>
+          </a>
+          <a class="card" href="https://www.desmos.com/calculator/2f644ce418" target="_blank" rel="noopener">
+            <img src="https://www.desmos.com/calc_thumbs/production/sy8q6lfsna.png" alt="BE KOBE" />
+            <span>BE KOBE</span>
+          </a>
+          <a class="card" href="https://www.desmos.com/calculator/34e1ccb22d" target="_blank" rel="noopener">
+            <img src="https://www.desmos.com/calc_thumbs/production/qx8rdfjgcs.png" alt="ONE SUMMER DAY" />
+            <span>ONE SUMMER DAY</span>
+          </a>
+          <a class="card" href="https://www.desmos.com/calculator/9c8e9374f5" target="_blank" rel="noopener">
+            <img src="https://www.desmos.com/calc_thumbs/production/ckkpzjeade.png" alt="関数おみくじ" />
+            <span>関数おみくじ</span>
+          </a>
+          <a class="card" href="https://www.desmos.com/calculator/6a6674eebf" target="_blank" rel="noopener">
+            <img src="https://www.desmos.com/calc_thumbs/production/vsqrxpujhr.png" alt="彼岸花" />
+            <span>彼岸花</span>
+          </a>
+
+          <!-- スクロール用に複製 -->
+          <a class="card" href="https://www.desmos.com/calculator/plcgxuggwb" target="_blank" rel="noopener">
+            <video class="card__video" muted loop autoplay playsinline>
+              <source src="https://www.desmos.com/art-contest-assets/19-the-fractal-milky-way.webm" type="video/webm" />
+            </video>
+            <span>The Fractal Milky Way</span>
+          </a>
+          <a class="card" href="https://www.desmos.com/calculator/bngrkvjs9c" target="_blank" rel="noopener">
+            <img src="https://www.desmos.com/calc_thumbs/production/bngrkvjs9c.png" alt="Desmos ギャラリー2" />
+            <span>夏が終わる</span>
+          </a>
+          <a class="card" href="https://www.desmos.com/calculator/0c0ec8e858" target="_blank" rel="noopener">
+            <img
+              src="https://www.desmos.com/calc_thumbs/production/version/0c0ec8e858/92ae7830-b082-11f0-833b-673d6c0195da.png"
+              alt="Desmos ギャラリー3" />
+            <span>卒業</span>
+          </a>
+          <a class="card" href="https://www.desmos.com/calculator/2f644ce418" target="_blank" rel="noopener">
+            <img src="https://www.desmos.com/calc_thumbs/production/sy8q6lfsna.png" alt="BE KOBE" />
+            <span>BE KOBE</span>
+          </a>
+          <a class="card" href="https://www.desmos.com/calculator/34e1ccb22d" target="_blank" rel="noopener">
+            <img src="https://www.desmos.com/calc_thumbs/production/qx8rdfjgcs.png" alt="ONE SUMMER DAY" />
+            <span>ONE SUMMER DAY</span>
+          </a>
+          <a class="card" href="https://www.desmos.com/calculator/9c8e9374f5" target="_blank" rel="noopener">
+            <img src="https://www.desmos.com/calc_thumbs/production/ckkpzjeade.png" alt="関数おみくじ" />
+            <span>関数おみくじ</span>
+          </a>
+          <a class="card" href="https://www.desmos.com/calculator/6a6674eebf" target="_blank" rel="noopener">
+            <img src="https://www.desmos.com/calc_thumbs/production/vsqrxpujhr.png" alt="彼岸花" />
+            <span>彼岸花</span>
+          </a>
+        </div>
+      </div>
+      <div class="page__nav"><button class="btn" data-action="next">次へ</button></div>
+    </section>
+
+    <!-- Page 2: Desmos 体験 -->
+    <section class="page page--desmos" data-page="2" aria-label="GraPen体験">
+      <div class="page__index">02</div>
+      <h2 class="page__title">触ってみる</h2>
+      <iframe class="embed" title="GraPen" src="https://teth-main.github.io/GraPen/"
+        style="display:block; margin:0 auto; width:min(900px,90vw); height:min(70vh,520px); border:1px solid #333; border-radius:12px; background:#111"></iframe>
+      <div class="page__nav"><button class="btn" data-action="next">次へ</button></div>
+    </section>
+
+    <!-- Page 3: アイコンUI -->
+    <section class="page page--hubs" data-page="3" aria-label="学びの入口">
+      <div class="page__index">03</div>
+      <h2 class="page__title">もっと触れてみる</h2>
+      <div class="hubs">
+        <button class="hub" data-hub="learn" aria-haspopup="dialog">
+          <span class="material-symbols-rounded" aria-hidden="true">school</span>
+          <span>学ぶ</span>
+        </button>
+        <button class="hub" data-hub="watch" aria-haspopup="dialog">
+          <span class="material-symbols-rounded" aria-hidden="true">slideshow</span>
+          <span>観る</span>
+        </button>
+        <button class="hub" data-hub="join" aria-haspopup="dialog">
+          <span class="material-symbols-rounded" aria-hidden="true">groups</span>
+          <span>参加する</span>
+        </button>
+      </div>
+      <div class="cta-more">
+        <button class="cta-wide" data-action="deep" aria-label="もっと知りたくなった方へ">
+          <span class="cta-wide__label">もっと知りたくなった方へ</span>
+          <svg class="cta-wide__chevron" viewBox="0 0 400 100" aria-hidden="true">
+            <path d="M10 20 L200 90 L390 20" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Deep pages: 色反転テーマ -->
+    <section class="page page--deep" data-page="4" aria-label="学ぶ（詳しく）">
+      <div class="page__index">04</div>
+      <h2 class="page__title">学ぶ — 動画視聴</h2>
+      <div class="deep__content">
+        <div class="deep__left">
+          <iframe class="embed deep__media" title="TETH 学ぶプレイリスト"
+            src="https://www.youtube.com/embed/jn11n_hRMRg?list=PLFtMcegIwb42WjnDgwNYPl0hDzrGe_pGZ"
+            style="display:block; margin:0 auto; width:100%; border:1px solid #333; border-radius:12px; background:#000"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="deep__right">
+          <h3>数式をアートに変える、最初の授業。</h3>
+          <p>
+            この動画では、学校で学ぶ一次関数や二次関数、そして円（楕円）を使って、グラフを実際に動かしてみるDesmosの基本操作を一緒に学びます。関数アートの「描き方」からどう形になるのかを視覚的に理解できるため、難しく考えずに、楽しみながら関数への理解を深められます！
+          </p>
+          <p style="margin-top:8px"><a
+              href="https://www.youtube.com/watch?v=jn11n_hRMRg&list=PLFtMcegIwb42WjnDgwNYPl0hDzrGe_pGZ" target="_blank"
+              rel="noopener">YouTube: 学ぶプレイリストを開く <span class="material-symbols-rounded link-icon"
+                aria-hidden="true">open_in_new</span></a></p>
+        </div>
+      </div>
+    </section>
+    <section class="page page--deep" data-page="5" aria-label="観る">
+      <div class="page__index">05</div>
+      <h2 class="page__title">観る — Desmos Art Expo</h2>
+      <div class="deep__content">
+        <a class="deep__left" href="https://www.desmos.com/art" target="_blank" rel="noopener">
+          <video class="deep__media" muted loop playsinline autoplay>
+            <source src="https://www.desmos.com/art-contest-assets/19-the-fractal-milky-way.webm" type="video/webm">
+          </video>
+          <div class="dcg-column-header-center">
+            <div class="dcg-title">“The Fractal Milky Way”</div>
+            <div class="dcg-author">TETH_Main・Japan</div>
+          </div>
+        </a>
+        <div class="deep__right">
+          <h3>世界で作られている関数アート</h3>
+          <p>シンプルな一次関数から、ちょっと複雑な複素数が描き出す驚きの模様まで。Desmos公式コンテストでは、世界中の13歳以上が数式を駆使して創り出した「数学アート」が500近く公開中。</p>
+          <p><a href="https://www.desmos.com/art" target="_blank" rel="noopener">Desmos: ギャラリーを見る <span
+                class="material-symbols-rounded link-icon" aria-hidden="true">open_in_new</span></a></p>
+        </div>
+      </div>
+    </section>
+    <section class="page page--deep" data-page="6" aria-label="参加する">
+      <div class="page__index">06</div>
+      <h2 class="page__title">参加する — コミュニティ</h2>
+      <div class="deep__content">
+        <a class="deep__left" href="http://discord.gg/298vPa6re7" target="_blank" rel="noopener">
+          <img src="https://pbs.twimg.com/ext_tw_video_thumb/1576882459378995201/pu/img/nVEck3zFS48kfffc.jpg"
+            alt="コミュニティ サムネイル" />
+        </a>
+        <div class="deep__right">
+          <h3>関数アーティストの仲間へ</h3>
+          <p>関数アートは一人で完成させる必要はありません。関数アーティストがたくさん集まっているお話場が用意されています。まだ Desmos を開いたことがない人も大歓迎。さあ、参加してみよう！</p>
+          <p><a href="http://discord.gg/298vPa6re7" target="_blank" rel="noopener">Discord へ参加する <span
+                class="material-symbols-rounded link-icon" aria-hidden="true">open_in_new</span></a></p>
+        </div>
+      </div>
+    </section>
+    <!-- Page 7: まとめ / クロージング -->
+    <section class="page page--summary" data-page="7" aria-label="まとめ">
+      <div class="page__index">07</div>
+      <h2 class="page__title">まとめ — はじめの一歩</h2>
+      <div class="summary__wrap">
+        <p class="summary__lead">ここまで、世界のトップランナーたちが創り上げた美しい数学アートのギャラリーを眺め、基礎的な関数の扱い方を学べる入門動画を見てきたことでしょう。</p>
+        <p class="summary__lead">もう、見る専門でいるのは終わりです。関数アートの世界は、教科書や単なる計算練習とは一線を画す、創造性を刺激するクリエイティブな表現の場です。</p>
+        <p class="summary__lead">
+          まずは、特に心惹かれた作品をもう一度じっくりと眺め、どんな数式が使われているのか想像してみてください。次に、Desmosグラフ計算機を開いて、実際にパラメーターをいじり、あなたの手で形をコントロールする楽しさを体験しましょう。
+        </p>
+        <p class="summary__lead">
+          そして、少しでも「これ面白いかも」「ここがわからない！」と感じたら、迷わずコミュニティに参加してください。同じ興味を持った仲間が、きっとあなたの次のアイデアを後押ししてくれます。さあ、あなたも数式を自分の表現手段にしましょう！
+        </p>
+      </div>
+      <div class="page__nav"><button class="btn" data-action="home" aria-label="トップに戻る">トップに戻る</button></div>
+    </section>
+  </main>
+
+  <!-- モーダル -->
+  <dialog id="modal" class="modal">
+    <button class="modal__close" aria-label="閉じる">
+      <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M4.5 4.5 L19.5 19.5 M4.5 19.5 L19.5 4.5" fill="none" stroke="currentColor" stroke-width="1.2"
+          stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div class="modal__content">
+      <h3 id="modalTitle"></h3>
+      <img id="modalThumb" class="modal__thumb" alt="thumbnail" />
+      <p id="modalBody"></p>
+      <p id="modalNote" class="modal__note"></p>
+    </div>
+  </dialog>
+
+  <script src="assets/main.js"></script>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
+
 </html>
