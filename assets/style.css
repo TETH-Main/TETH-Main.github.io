@@ -224,5 +224,7 @@ body.bg-video-hidden .bg-video-wrap{
   .summary__wrap{padding:8px 10px}
 }
 
+@media (min-width:900px){ .summary__wrap{margin:0 auto; justify-self:center} }
+
 .deep__right .link-icon{font-size:16px; vertical-align:middle; margin-left:8px; line-height:1; color:var(--accent); opacity:0.95; transition: color .12s ease, transform .12s ease;}
 .deep__right a:hover .link-icon, .deep__right a:focus .link-icon{color:var(--fg);}
