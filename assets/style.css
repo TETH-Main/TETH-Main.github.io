@@ -82,7 +82,7 @@ body.bg-video-hidden .bg-video-wrap{
   }
 }
 
-.pages{position:relative; height:100vh; overflow:hidden}
+.pages{position:relative; height:100vh; height:100dvh; overflow:hidden}
 .page{position:absolute; inset:0; display:grid; grid-template-rows: auto 1fr auto; gap:12px; align-items:center; padding:24px; opacity:0; transform:translateY(20%); transition:opacity .4s ease, transform .4s ease}
 .page{pointer-events:none}
 .page.active{opacity:1; transform:none; pointer-events:auto; z-index:1}
@@ -188,6 +188,12 @@ body.bg-video-hidden .bg-video-wrap{
 
 /* ページごとのレイアウト調整 */
 .page--gallery .carousel{height:56vh; align-items:center}
+@supports (height: 1dvh){ .page--gallery .carousel{ height:56dvh } }
+@media (max-width:720px){
+  .page--gallery .carousel{ height:46vh }
+  @supports (height: 1svh){ .page--gallery .carousel{ height:46svh } }
+  @supports (height: 1dvh){ .page--gallery .carousel{ height:46dvh } }
+}
 .page--hubs .hubs{height:42vh; align-content:center}
 
 .deep__content{display:flex; gap:20px; align-items:center; justify-content:center; max-width:1100px; margin:14px auto}
