@@ -60,14 +60,47 @@
     else withLock(navPrev)
   }, {passive:false})
 
-  let touchY = null
-  window.addEventListener('touchstart', (e)=> touchY = e.touches[0].clientY, {passive:true})
+  let touchStartY = null
+  let touchStartX = null
+  let touchTarget = null
+  // helper to determine interactive/scrollable areas where we should not block native gestures
+  function isInteractive(el){
+    if(!el) return false
+    return !!(el.closest && (el.closest('.carousel') || el.closest('.embed') || el.closest('input,textarea,select,button,a,iframe,dialog')))
+  }
+
+  window.addEventListener('touchstart', (e)=>{
+    touchStartY = e.touches[0].clientY
+    touchStartX = e.touches[0].clientX
+    touchTarget = e.target
+  }, {passive:false})
+
+  // prevent pull-to-refresh / native overscroll when user is swiping between sections
+  window.addEventListener('touchmove', (e)=>{
+    if(touchStartY == null) return
+    const curY = e.touches[0].clientY
+    const dy = curY - touchStartY
+    const dx = e.touches[0].clientX - touchStartX
+    // only consider mostly-vertical moves and significant distance
+    if(Math.abs(dy) > 10 && Math.abs(dy) > Math.abs(dx)){
+      // if touch started inside interactive area (carousel, embed, form, iframe), don't block
+      if(!isInteractive(touchTarget)){
+        e.preventDefault()
+      }
+    }
+  }, {passive:false})
+
   window.addEventListener('touchend', (e)=>{
-    if(touchY==null) return
-    const dy = e.changedTouches[0].clientY - touchY
-    if(Math.abs(dy) > 40){ if(dy < 0) withLock(navNext); else withLock(navPrev) }
-    touchY = null
-  }, {passive:true})
+    if(touchStartY==null) return
+    const dy = e.changedTouches[0].clientY - touchStartY
+    if(Math.abs(dy) > 40){
+      // only navigate if the gesture didn't start inside an interactive area
+      if(!isInteractive(touchTarget)){
+        if(dy < 0) withLock(navNext); else withLock(navPrev)
+      }
+    }
+    touchStartY = null; touchStartX = null; touchTarget = null
+  }, {passive:false})
 
   const gallery = document.getElementById('gallery')
   function updateCenter(){

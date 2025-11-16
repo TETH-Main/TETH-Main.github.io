@@ -38,6 +38,9 @@ body{
   transition: background-color .6s ease, color .6s ease;
 }
 
+/* Prevent scroll chaining / pull-to-refresh on mobile when using touch navigation */
+html, body, #pages { overscroll-behavior: none; }
+
 .bg-video-wrap{position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none}
 .bg-video{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); min-width:100%; min-height:100%; width:auto; height:auto; object-fit:cover; filter: blur(var(--bg-video-blur)) saturate(.78) brightness(.88); will-change:transform}
 .bg-video-overlay{
@@ -82,8 +85,11 @@ body.bg-video-hidden .bg-video-wrap{
     );
     background-color: rgba(0,0,0,0.66);
   }
-  .bg-video{ /* 小さな画面で視覚的インパクトを軽減（ややトーンダウン） */
-    filter: blur(var(--bg-video-blur)) saturate(.85) brightness(.9);
+  .bg-video-wrap{background-color:var(--bg); background-repeat:no-repeat; background-position:center; background-size:cover;}
+  .bg-video-wrap{background-image: url('assets/background-mobile.gif'), radial-gradient(ellipse at center, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0.35) 60%), linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.5));}
+  .bg-video-wrap{background-blend-mode: normal, overlay, normal}
+  .bg-video-overlay{
+    background-image: none; background-color: rgba(0,0,0,0.28);
   }
 }
 
