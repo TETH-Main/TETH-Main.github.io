@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>しりとりグラフ - Shiritori Graph</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- グラフ描画領域 -->
+  <div id="graph-container">
+    <!-- サイトタイトル（左上） -->
+    <div id="site-title">
+      6月イベント：1時間で何回しりとりバトンが渡せるか！？
+    </div>
+
+    <!-- コントロールUI -->
+    <div id="controls">
+      <label>
+        斥力
+        <input type="range" id="charge-slider" min="1" max="100" value="40">
+        <span class="control-value" id="charge-value">40</span>
+      </label>
+      <button id="reset-btn">レイアウトをリセット</button>
+    </div>
+  </div>
+
+  <!-- D3.js (CDN) -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <!-- アプリケーションスクリプト -->
+  <script src="js/data.js"></script>
+  <script src="js/graph.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
