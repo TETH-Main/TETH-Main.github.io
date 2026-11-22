@@ -1,0 +1,28 @@
+name: Update site content
+
+on:
+  schedule:
+    - cron: "13 21 * * *"   # 毎日 06:13 JST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 最新の投稿（YouTube）を更新
+        run: python3 update_posts.py
+      - name: グッズ（BASE / BOOTH）を更新
+        run: python3 update_shop.py
+        continue-on-error: true
+      - name: 変更があればコミット
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet || git commit -m "Update site content"
+          git push
