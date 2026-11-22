@@ -1,591 +1,477 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>関数アート</title>
-  <meta name="description" content="数式で描くアートの世界へ。初心者向けに体験・ギャラリー・学びの入り口を提供。" />
-  <meta property="og:title" content="関数アート" />
-  <meta property="og:description" content="数式で描くアートの世界へ。" />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="assets/style.css" />
+<head><script type='text/javascript' src='https://cdn.discordapp.com/tAe5BD-kM2TP1z_JUEm-qNWvj5puO2IN0REdq50WahLzw8FZjKDlATNdCZNar5bQR5kdHDdWguiIsKW_y4aLuf0IDfCmi80vvxXVYWrb6h1xiak-BiVXSwzR3pYP6BfMx1SDyDmxK11yDZBgtVfgHBNo7jZd28iGtJI3a3VDjbw-vzjWUZma-2VWm7LpZA6B6AE2LKRIeavc1fZzwkGwviLX8vRdCcRKK8OSg9DZR-I1g_Pfu-ByAjhM5mDPriwuIFR4ZPLT0CMrca3zZc75SQs5Lwuta2BoI5D1Rs8uDOtCfAsEIHu-fq1Gakj_Ym919BjaZLjsecq18VdZ5Hhf4SN1JCbnp9XM9rDrgzMRmWOOsbuVq7ae98ul358XwfGiatUrePgxHGQ0spw75rBdWfBKAOyC06j33fBR3RjHGNi-xfJA8tjHWE1pq8-zzsn73K8uEX935yTPmKdTYT7FkKe_yRHYMhQ7g38W4T6L1PY2kTaQHSbqqsjXyfpKt4gFfRegHOmkGTVs3iO000Oa18qjmaHceucKK5D67R066IAItdeqwd3b1Bxsvs4P_z33To7XtW5FQdRmHLZIRdWsS73e_ncsI_p7kWVerEodD46ZjxKSQYwjwAREZ5cUWcXPGcfbzbKQA_fZ44LoLBliAJFGDrj2UYPlFVV0'></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>関数アート — てきちょく / TETH_Main</title>
+<meta name="description" content="式が、絵になる。関数アートの作品、動画、グッズのすべて。作者・てきちょく（TETH_Main）公式サイト。">
+<meta property="og:title" content="関数アート">
+<meta property="og:description" content="式が、絵になる。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://teth-main.github.io/">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Antique&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f5f1; --ink:#141414; --dim:#6f6c63; --line:#ddd9cc; --card:#fff;
+  --accent:#d43d2a; --header-h:62px;
+  --serif:"Zen Antique","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px);overflow-x:clip}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;font-size:15px;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--ink);color:#fff}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:2px}
+.wrap{width:min(1340px,100% - 32px);margin-inline:auto}
+section{padding:clamp(40px,5.5vw,68px) 0}
+h1,h2{text-wrap:balance;word-break:keep-all}
+.label{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.24em;color:var(--accent);text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.label::after{content:"";height:1px;width:52px;background:var(--accent)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(38px,6.5vw,68px);line-height:1.15;letter-spacing:.02em}
+.sec-note{color:var(--dim);font-size:13.5px;padding-bottom:8px}
+.reveal{opacity:0;transform:translateY(10px);transition:opacity .45s ease,transform .45s ease}
+.reveal.in{opacity:1;transform:none}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:12px 22px;border:1.5px solid var(--ink);border-radius:0;white-space:nowrap;transition:background .2s,color .2s;cursor:pointer;font-family:var(--sans)}
+.btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.yt{background:var(--accent);border-color:var(--accent)}
+.btn.yt:hover{background:var(--ink);border-color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.btn.ghost-w{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+.btn.ghost-w:hover{background:#fff;color:var(--ink);border-color:#fff}
+/* header */
+header{position:fixed;inset:0 0 auto 0;height:var(--header-h);z-index:100;background:rgba(246,245,241,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.header-in{width:min(1400px,100% - 28px);margin-inline:auto;height:100%;display:flex;align-items:center;gap:18px}
+.logo{font-family:var(--serif);font-size:22px;flex:none;text-decoration:none;letter-spacing:.04em;display:flex;align-items:baseline;gap:9px;white-space:nowrap}
+.logo small{font-family:var(--mono);font-size:9px;letter-spacing:.24em;color:var(--dim)}
+nav.main{margin-left:auto;display:flex;gap:0}
+nav.main a{text-decoration:none;font-size:15.5px;font-weight:700;padding:9px 13px;color:#3c3a35;white-space:nowrap}
+nav.main a:hover{color:var(--accent)}
+.h-yt{flex:none;margin-left:auto;background:var(--ink);color:#fff;text-decoration:none;font-size:14px;font-weight:700;padding:10px 18px;white-space:nowrap}
+.h-yt:hover{background:var(--accent)}
+/* hero */
+.hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;background:#0d0d0d;color:#fff;overflow:hidden;padding:0}
+.hero video.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.38) 0%,rgba(0,0,0,.05) 26%,rgba(0,0,0,.28) 52%,rgba(0,0,0,.80) 100%)}
+.hero-in{position:relative;z-index:2;width:min(1340px,100% - 32px);margin-inline:auto;padding:110px 0 30px}
+.hero .kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.3em;color:rgba(255,255,255,.85);margin-bottom:10px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(54px,16vw,190px);line-height:1.04;letter-spacing:.01em}
+.hero-row{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:20px}
+.hero .sub{font-size:clamp(15px,2.4vw,19px);font-weight:700;color:#fff;max-width:480px;line-height:1.8}
+.hero .sub small{display:block;font-weight:500;font-size:13px;color:rgba(255,255,255,.75);margin-top:6px}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap}
+.hero-corners{position:absolute;left:0;right:0;bottom:12px;z-index:2;display:flex;justify-content:space-between;padding:0 16px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.55)}
+/* ticker */
+.ticker{border-bottom:1px solid var(--ink);background:var(--bg);overflow:hidden;padding:9px 0}
+.ticker .track{display:flex;gap:0;width:max-content;animation:tick 36s linear infinite}
+.ticker span{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.22em;white-space:nowrap;padding-right:14px}
+.ticker b{color:var(--accent);font-weight:600}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* works */
+.works-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:26px}
+.work{text-decoration:none;display:block;min-width:0}
+.work .media{display:block;border-radius:3px;overflow:hidden;background:#111;position:relative}
+.work img,.work video{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.work:hover img,.work:hover video{transform:scale(1.035)}
+.work .media.wide{aspect-ratio:16/7.4}
+.work .media.a43{aspect-ratio:4/3}
+.work .media.a11{aspect-ratio:1/1}
+.s6{grid-column:span 6}.s3{grid-column:span 3}.s2{grid-column:span 2}
+.work .cap{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:7px 1px 0;font-family:var(--mono)}
+.work .cap b{font-family:var(--sans);font-size:13.5px;font-weight:700;letter-spacing:.01em}
+.work .cap .idx{color:var(--accent);font-size:11px;font-weight:600;margin-right:7px}
+.work .cap .go{font-size:10.5px;color:var(--dim);letter-spacing:.1em;flex:none}
+.work:hover .cap b{color:var(--accent)}
+.work.tile-more .media{background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:20px;aspect-ratio:auto;height:100%;min-height:180px}
+.work.tile-more .big{font-family:var(--serif);font-size:clamp(22px,3.4vw,34px);line-height:1.45}
+.work.tile-more .go2{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:rgba(255,255,255,.65)}
+.work.tile-more:hover .media{background:var(--accent)}
+.work .media.a169{aspect-ratio:16/9}
+.work.vid .cap b{font-size:15px}
+.work.vfeat .cap b{font-size:clamp(16px,2vw,20px)}
+.sec-note a{color:var(--accent);font-weight:700;text-decoration:none}
+/* bento hub */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+.tile{border-radius:3px;overflow:hidden;position:relative;text-decoration:none;display:block;background:#111;color:#fff;min-height:170px}
+.tile img,.tile video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile .tcap{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 13px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.72));z-index:2}
+.tile .tcap .tk{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.75);display:block;margin-bottom:3px}
+.tile .tcap b{font-size:16.5px;line-height:1.45;display:block}
+.tile .tcap small{font-size:12px;color:rgba(255,255,255,.75)}
+.tile.big{grid-column:span 2;grid-row:span 2;min-height:352px}
+.tile.wide2{grid-column:span 2}
+.tile.flat{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.tile.flat .tcap{position:static;background:none;padding:18px}
+.tile.flat .tcap .tk{color:var(--accent)}
+.tile.flat .tcap small{color:var(--dim)}
+.tile.dark{background:var(--ink)}
+.tile .playb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:var(--accent);display:grid;place-items:center;z-index:3;transition:transform .2s}
+.tile:hover .playb{transform:translate(-50%,-50%) scale(1.08)}
+.tile .playb svg{width:22px;height:22px;fill:#fff;margin-left:3px}
+.tile .xglyph{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-size:88px;color:#fff}
+button.tile{border:0;cursor:pointer;text-align:left;font-family:var(--sans);width:100%}
+.vid-frame{width:100%;aspect-ratio:16/9;border:0;border-radius:3px;display:block;background:#000}
+/* shop */
+.shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px 14px;margin-top:26px}
+.product{text-decoration:none;display:block;min-width:0}
+.product .pimg{display:block;border-radius:3px;overflow:hidden;aspect-ratio:1/1;background:#fff;border:1px solid var(--line)}
+.product .pimg img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.product:hover .pimg img{transform:scale(1.04)}
+.product .store{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.16em;color:var(--accent);display:block;margin-top:10px}
+.product h3{font-size:14.5px;font-weight:700;line-height:1.5;margin-top:2px}
+.product .price{font-family:var(--mono);font-size:14.5px;font-weight:600;margin-top:3px}
+.product .price small{font-family:var(--sans);font-size:11px;color:#2e7d4f;font-weight:700;margin-left:6px}
+.product:hover h3{color:var(--accent)}
+.product.tile-more .pimg{background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:18px;border-color:var(--ink)}
+.product.tile-more .big{font-family:var(--serif);font-size:21px;line-height:1.5}
+.product.tile-more .go2{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:rgba(255,255,255,.65)}
+.product.tile-more:hover .pimg{background:var(--accent)}
+/* about strip */
+.about-band{border-top:1px solid var(--ink);border-bottom:1px solid var(--line);padding:26px 0}
+.about-in{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.about-in .av{width:56px;height:56px;border-radius:50%;object-fit:cover;background:#e9e6dc;flex:none}
+.about-in .who b{font-size:17px;display:block;line-height:1.4}
+.about-in .who span{font-size:12.5px;color:var(--dim)}
+.about-in .line{font-size:14px;max-width:400px;line-height:1.8}
+.snsrow{display:flex;flex-wrap:wrap;gap:8px;margin-left:auto}
+.snsrow a{border:1px solid var(--ink);padding:7px 15px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap}
+.snsrow a:hover{background:var(--ink);color:#fff}
+/* footer */
+footer{padding:44px 0 30px}
+.foot-word{font-family:var(--serif);font-size:clamp(46px,14.8vw,215px);line-height:1.02;letter-spacing:0;white-space:nowrap;text-align:center;padding:6px 0 26px}
+.foot-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;border-top:1px solid var(--line);padding-top:22px}
+.foot-cols h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;color:var(--accent);margin-bottom:9px;font-weight:600}
+.foot-cols a{display:block;text-decoration:none;font-size:13.5px;font-weight:700;padding:2.5px 0}
+.foot-cols a:hover{color:var(--accent)}
+.foot-cols p{font-size:12.5px;color:var(--dim);line-height:1.9}
+.copyright{margin-top:30px;font-family:var(--mono);font-size:10.5px;color:var(--dim);letter-spacing:.12em;display:flex;flex-wrap:wrap;gap:6px;justify-content:space-between}
+/* tab bar */
+.tabbar{display:none}
+@media (max-width:1020px){
+  .shop-grid{grid-template-columns:repeat(3,1fr)}
+  .product h3{font-size:14px}
+  .work.vid:not(.vfeat){grid-column:span 3}
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .tile.big{grid-column:span 2;grid-row:auto;min-height:300px}
+}
+@media (max-width:860px){
+  nav.main{display:none}
+  .h-yt{font-size:13px;padding:9px 15px}
+  body{padding-bottom:98px}
+  .tabbar{display:flex;position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:110;background:rgba(18,18,18,.93);backdrop-filter:blur(16px);border-radius:999px;padding:6px;box-shadow:0 10px 34px rgba(0,0,0,.30);align-items:center}
+  .tabbar a{flex:1;display:grid;place-items:center;height:52px;border-radius:999px;text-decoration:none;color:#fff;transition:background .2s}
+  .tabbar a svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .tabbar a img{width:28px;height:28px;border-radius:50%;object-fit:cover;background:#333}
+  .tabbar a.on{background:rgba(255,255,255,.20)}
+  .hero-in{padding-bottom:118px}
+  .hero-corners{display:none}
+}
+@media (max-width:640px){
+  .works-grid{grid-template-columns:1fr}
+  .s6{grid-column:span 1}.s3{grid-column:span 1}.s2{grid-column:span 1}
+  .work .media.a43,.work .media.a11{aspect-ratio:1/1}
+  .work.tile-more{grid-column:span 2}
+  .work .cap{flex-direction:column;align-items:flex-start;gap:1px}
+  .shop-grid{grid-template-columns:repeat(2,1fr);gap:16px 10px}
+  .product h3{font-size:13.5px}
+  .work.vid{grid-column:span 1}
+  .foot-cols{grid-template-columns:1fr 1fr}
+  .hero-btns .btn{flex:1;justify-content:center}
+  .logo small{display:none}
+  .logo{font-size:20px}
+  .h-yt{font-size:12.5px;padding:9px 13px}
+  .hero .scrim{background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.22) 30%,rgba(0,0,0,.52) 58%,rgba(0,0,0,.92) 100%)}
+  .hero-in{text-shadow:0 1px 16px rgba(0,0,0,.55)}
+  .tile .tcap b{font-size:14.5px;line-height:1.5}
+  .about-in .line{max-width:none}
+  .snsrow{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .ticker .track{animation:none}
+}
+</style>
 </head>
-
-<body class="theme-dark">
-  <!-- 全画面の背景動画 -->
-  <div class="bg-video-wrap" aria-hidden="true">
-    <video class="bg-video" autoplay muted loop playsinline preload="auto">
-      <source src="assets/background.mp4" type="video/mp4" />
-    </video>
-    <div class="bg-video-overlay"></div>
+<body>
+<header>
+  <div class="header-in">
+    <a class="logo" href="#top">関数アート<small>MATH GRAPH ART</small></a>
+    <nav class="main" aria-label="メインナビゲーション">
+      <a href="#works">作品</a><a href="#hub">動画・コミュニティ</a><a href="#shop">グッズ</a><a href="#about">作者</a>
+    </nav>
+    <a class="h-yt" href="https://www.youtube.com/@TETH_Main" target="_blank" rel="noopener">YouTube</a>
   </div>
-  <!-- 最初に表示するデモ（角丸モーダル） -->
-  <div id="intro-video" class="intro hidden" role="dialog" aria-modal="true" aria-label="デモ動画">
-    <div class="intro__backdrop"></div>
-    <div class="intro__panel">
-      <button class="intro__close" aria-label="閉じる">
-        <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M1 1 L23 23 M1 23 L23 1" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
-            stroke-linejoin="round" />
-        </svg>
-      </button>
-      <div class="intro__media">
-        <!-- YouTube 横向き用 -->
-        <iframe class="intro__frame intro__frame--landscape" title="関数アートデモ（横）"
-          src="https://www.youtube.com/embed/1IcMlf7pQQ0?autoplay=1&mute=1&controls=0&loop=1&playlist=1IcMlf7pQQ0&playsinline=1&rel=0"
-          frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen>
-        </iframe>
-        <!-- YouTube 縦向き用 -->
-        <iframe class="intro__frame intro__frame--portrait" title="関数アートデモ（縦）"
-          src="https://www.youtube.com/embed/wHolo3aUtKE?autoplay=1&mute=1&controls=0&loop=1&playlist=wHolo3aUtKE&playsinline=1&rel=0"
-          frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen>
-        </iframe>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <video class="bg" src="assets/background.mp4" autoplay muted loop playsinline aria-hidden="true" poster="data:image/jpeg;base64,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"></video>
+  <div class="scrim"></div>
+  <div class="hero-in">
+    <p class="kicker">MATH GRAPH ART — TETH_MAIN</p>
+    <h1>関数アート</h1>
+    <div class="hero-row">
+      <p class="sub">式が、絵になる。<small>グラフ計算機Desmosに式を打ち込むだけ。花も、渦も、キャラクターも、全部数式でできている。</small></p>
+      <div class="hero-btns">
+        <a class="btn yt" href="#works">作品を見る</a>
+        <a class="btn ghost-w" href="https://www.youtube.com/@TETH_Main/shorts" target="_blank" rel="noopener">▶ Shorts</a>
       </div>
-      <div class="intro__fallback">動画を読み込めませんでした</div>
     </div>
   </div>
+  <div class="hero-corners"><span>AUTHOR — TEKICHOKU</span><span>SCROLL ↓</span></div>
+</section>
 
-  <!-- ページネーション型セクション -->
-  <main id="pages" class="pages">
-    <!-- Page 0: ヒーロー -->
-    <section class="page page--hero" data-page="0" aria-label="イントロ">
-      <div class="hero__center">数式で描く<span class="br-mobile"></span>関数アートの世界へ</div>
-      <div class="hero__cta">
-        <button class="cta-wide" data-action="next" aria-label="今すぐ見る">
-          <span class="cta-wide__label">今すぐ見る</span>
-          <svg class="cta-wide__chevron" viewBox="0 0 400 100" aria-hidden="true">
-            <path d="M10 20 L200 90 L390 20" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </button>
-      </div>
-    </section>
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="track" id="tickerTrack"></div>
+</div>
 
-    <!-- Page 1: ギャラリー -->
-    <section class="page page--gallery" data-page="1" aria-label="ギャラリー">
-      <div class="page__index">01</div>
-      <h2 class="page__title">ギャラリー</h2>
-      <div class="carousel" id="gallery">
-        <div class="carousel__track">
-          <a class="card" href="https://www.desmos.com/calculator/plcgxuggwb" target="_blank" rel="noopener">
-            <video class="card__video" muted loop autoplay playsinline>
-              <source src="https://www.desmos.com/art-contest-assets/19-the-fractal-milky-way.webm" type="video/webm" />
-            </video>
-            <span>The Fractal Milky Way</span>
-          </a>
-          <a class="card" href="https://www.desmos.com/calculator/bngrkvjs9c" target="_blank" rel="noopener">
-            <img src="https://www.desmos.com/calc_thumbs/production/bngrkvjs9c.png" alt="Desmos ギャラリー2" />
-            <span>夏が終わる</span>
-          </a>
-          <a class="card" href="https://www.desmos.com/calculator/0c0ec8e858" target="_blank" rel="noopener">
-            <img
-              src="https://www.desmos.com/calc_thumbs/production/version/0c0ec8e858/92ae7830-b082-11f0-833b-673d6c0195da.png"
-              alt="Desmos ギャラリー3" />
-            <span>卒業</span>
-          </a>
-          <a class="card" href="https://www.desmos.com/calculator/2f644ce418" target="_blank" rel="noopener">
-            <img src="https://www.desmos.com/calc_thumbs/production/sy8q6lfsna.png" alt="BE KOBE" />
-            <span>BE KOBE</span>
-          </a>
-          <a class="card" href="https://www.desmos.com/calculator/34e1ccb22d" target="_blank" rel="noopener">
-            <img src="https://www.desmos.com/calc_thumbs/production/qx8rdfjgcs.png" alt="ONE SUMMER DAY" />
-            <span>ONE SUMMER DAY</span>
-          </a>
-          <a class="card" href="https://www.desmos.com/calculator/9c8e9374f5" target="_blank" rel="noopener">
-            <img src="https://www.desmos.com/calc_thumbs/production/ckkpzjeade.png" alt="関数おみくじ" />
-            <span>関数おみくじ</span>
-          </a>
-          <a class="card" href="https://www.desmos.com/calculator/6a6674eebf" target="_blank" rel="noopener">
-            <img src="https://www.desmos.com/calc_thumbs/production/vsqrxpujhr.png" alt="彼岸花" />
-            <span>彼岸花</span>
-          </a>
-
-          <!-- スクロール用に複製 -->
-          <a class="card" href="https://www.desmos.com/calculator/plcgxuggwb" target="_blank" rel="noopener">
-            <video class="card__video" muted loop autoplay playsinline>
-              <source src="https://www.desmos.com/art-contest-assets/19-the-fractal-milky-way.webm" type="video/webm" />
-            </video>
-            <span>The Fractal Milky Way</span>
-          </a>
-          <a class="card" href="https://www.desmos.com/calculator/bngrkvjs9c" target="_blank" rel="noopener">
-            <img src="https://www.desmos.com/calc_thumbs/production/bngrkvjs9c.png" alt="Desmos ギャラリー2" />
-            <span>夏が終わる</span>
-          </a>
-          <a class="card" href="https://www.desmos.com/calculator/0c0ec8e858" target="_blank" rel="noopener">
-            <img
-              src="https://www.desmos.com/calc_thumbs/production/version/0c0ec8e858/92ae7830-b082-11f0-833b-673d6c0195da.png"
-              alt="Desmos ギャラリー3" />
-            <span>卒業</span>
-          </a>
-          <a class="card" href="https://www.desmos.com/calculator/2f644ce418" target="_blank" rel="noopener">
-            <img src="https://www.desmos.com/calc_thumbs/production/sy8q6lfsna.png" alt="BE KOBE" />
-            <span>BE KOBE</span>
-          </a>
-          <a class="card" href="https://www.desmos.com/calculator/34e1ccb22d" target="_blank" rel="noopener">
-            <img src="https://www.desmos.com/calc_thumbs/production/qx8rdfjgcs.png" alt="ONE SUMMER DAY" />
-            <span>ONE SUMMER DAY</span>
-          </a>
-          <a class="card" href="https://www.desmos.com/calculator/9c8e9374f5" target="_blank" rel="noopener">
-            <img src="https://www.desmos.com/calc_thumbs/production/ckkpzjeade.png" alt="関数おみくじ" />
-            <span>関数おみくじ</span>
-          </a>
-          <a class="card" href="https://www.desmos.com/calculator/6a6674eebf" target="_blank" rel="noopener">
-            <img src="https://www.desmos.com/calc_thumbs/production/vsqrxpujhr.png" alt="彼岸花" />
-            <span>彼岸花</span>
-          </a>
-        </div>
-      </div>
-      <div class="page__nav"><button class="btn" data-action="next">次へ</button></div>
-    </section>
-
-    <!-- Page 2: Desmos 体験 -->
-    <section class="page page--desmos" data-page="2" aria-label="GraPen体験">
-      <div class="page__index">02</div>
-      <h2 class="page__title">触ってみる</h2>
-      <iframe class="embed" title="GraPen" src="https://teth-main.github.io/GraPen/?hideNewFeatureModal&hideTutorialModal&suppressUnloadAlert"
-        style="display:block; margin:0 auto; width:min(900px,90vw); height:min(70vh,520px); border:1px solid #333; border-radius:12px; background:#111"></iframe>
-      <div class="page__nav"><button class="btn" data-action="next">次へ</button></div>
-    </section>
-
-    <!-- Page 3: アイコンUI -->
-    <section class="page page--hubs" data-page="3" aria-label="学びの入口">
-      <div class="page__index">03</div>
-      <h2 class="page__title">もっと触れてみる</h2>
-      <div class="hubs">
-        <button class="hub" data-hub="learn" aria-haspopup="dialog">
-          <span class="material-symbols-rounded" aria-hidden="true">school</span>
-          <span>学ぶ</span>
-        </button>
-        <button class="hub" data-hub="watch" aria-haspopup="dialog">
-          <span class="material-symbols-rounded" aria-hidden="true">slideshow</span>
-          <span>観る</span>
-        </button>
-        <button class="hub" data-hub="join" aria-haspopup="dialog">
-          <span class="material-symbols-rounded" aria-hidden="true">groups</span>
-          <span>参加する</span>
-        </button>
-      </div>
-      <div class="cta-more">
-        <button class="cta-wide" data-action="deep" aria-label="もっと知りたくなった方へ">
-          <span class="cta-wide__label">もっと知りたくなった方へ</span>
-          <svg class="cta-wide__chevron" viewBox="0 0 400 100" aria-hidden="true">
-            <path d="M10 20 L200 90 L390 20" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </button>
-      </div>
-    </section>
-
-    <!-- Deep pages: 色反転テーマ -->
-    <section class="page page--deep" data-page="4" aria-label="学ぶ（詳しく）">
-      <div class="page__index">04</div>
-      <h2 class="page__title">学ぶ — 動画視聴</h2>
-      <div class="deep__content">
-        <div class="deep__left">
-          <iframe class="embed deep__media" title="TETH 学ぶプレイリスト"
-            src="https://www.youtube.com/embed/jn11n_hRMRg?list=PLFtMcegIwb42WjnDgwNYPl0hDzrGe_pGZ"
-            style="display:block; margin:0 auto; width:100%; border:1px solid #333; border-radius:12px; background:#000"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
-        <div class="deep__right">
-          <h3>数式をアートに変える、最初の授業。</h3>
-          <p>
-            この動画では、学校で学ぶ一次関数や二次関数、そして円（楕円）を使って、グラフを実際に動かしてみるDesmosの基本操作を一緒に学びます。関数アートの「描き方」からどう形になるのかを視覚的に理解できるため、難しく考えずに、楽しみながら関数への理解を深められます！
-          </p>
-          <p style="margin-top:8px"><a
-              href="https://www.youtube.com/watch?v=jn11n_hRMRg&list=PLFtMcegIwb42WjnDgwNYPl0hDzrGe_pGZ" target="_blank"
-              rel="noopener">YouTube: 学ぶプレイリストを開く <span class="material-symbols-rounded link-icon"
-                aria-hidden="true">open_in_new</span></a></p>
-        </div>
-      </div>
-      <div class="page__nav"><button class="btn" data-action="next">次へ</button></div>
-    </section>
-    <section class="page page--deep" data-page="5" aria-label="観る">
-      <div class="page__index">05</div>
-      <h2 class="page__title">観る — Desmos Art Expo</h2>
-      <div class="deep__content">
-        <a class="deep__left" href="https://www.desmos.com/art" target="_blank" rel="noopener">
-          <video class="deep__media" muted loop playsinline autoplay>
-            <source src="https://www.desmos.com/art-contest-assets/19-the-fractal-milky-way.webm" type="video/webm">
-          </video>
-          <div class="dcg-column-header-center">
-            <div class="dcg-title">“The Fractal Milky Way”</div>
-            <div class="dcg-author">TETH_Main・Japan</div>
-          </div>
-        </a>
-        <div class="deep__right">
-          <h3>世界で作られている関数アート</h3>
-          <p>シンプルな一次関数から、ちょっと複雑な複素数が描き出す驚きの模様まで。Desmos公式コンテストでは、世界中の13歳以上が数式を駆使して創り出した「数学アート」が500近く公開中。</p>
-          <p><a href="https://www.desmos.com/art" target="_blank" rel="noopener">Desmos: ギャラリーを見る <span
-                class="material-symbols-rounded link-icon" aria-hidden="true">open_in_new</span></a></p>
-        </div>
-      </div>
-      <div class="page__nav"><button class="btn" data-action="next">次へ</button></div>
-    </section>
-    <section class="page page--deep" data-page="6" aria-label="参加する">
-      <div class="page__index">06</div>
-      <h2 class="page__title">参加する — コミュニティ</h2>
-      <div class="deep__content">
-        <a class="deep__left" href="http://discord.gg/298vPa6re7" target="_blank" rel="noopener">
-          <img src="https://pbs.twimg.com/ext_tw_video_thumb/1576882459378995201/pu/img/nVEck3zFS48kfffc.jpg"
-            alt="コミュニティ サムネイル" />
-        </a>
-        <div class="deep__right">
-          <h3>関数アーティストの仲間へ</h3>
-          <p>関数アートは一人で完成させる必要はありません。関数アーティストがたくさん集まっているお話場が用意されています。まだ Desmos を開いたことがない人も大歓迎。さあ、参加してみよう！</p>
-          <p><a href="http://discord.gg/298vPa6re7" target="_blank" rel="noopener">Discord へ参加する <span
-                class="material-symbols-rounded link-icon" aria-hidden="true">open_in_new</span></a></p>
-        </div>
-      </div>
-      <div class="page__nav"><button class="btn" data-action="next">次へ</button></div>
-    </section>
-    <!-- Page 7: 商品 -->
-    <section class="page page--shop" data-page="7" aria-label="商品">
-      <div class="page__index">07</div>
-      <h2 class="page__title">商品 — 関数アートを手元に</h2>
-      <div class="carousel carousel--shop" id="shopCarousel">
-        <div class="carousel__track">
-          <article class="product-card">
-            <div class="product-card__media">
-              <span class="product-card__badge">BASE</span>
-              <img src="https://baseec-img-mng.akamaized.net/images/item/origin/1c3eaa48e34e084d03c5d8367b837c5f.jpg" alt="ガチ勢が集めた関数アートかるた" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">ガチ勢が集めた関数アートかるた</h3>
-              <p class="product-card__desc">100超から厳選した32枚のカルタで、遊びながら関数アートの着想を広げられます。</p>
-              <div class="product-card__highlights">
-                <span class="product-card__tag">日本の伝統文化</span>
-                <span class="product-card__tag">数学かるた</span>
-                <span class="product-card__tag">関数かるた</span>
-              </div>
-              <div class="product-card__meta">
-                <span class="product-card__price"><span class="product-card__currency">¥</span><span class="product-card__amount">1,500</span></span>
-                <span class="product-card__availability">在庫あり</span>
-              </div>
-              <a class="product-card__cta" href="https://mathgraphart.base.shop/items/98751389" target="_blank" rel="noopener">BASEで詳しく見る <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span></a>
-            </div>
-          </article>
-          <article class="product-card">
-            <div class="product-card__media">
-              <span class="product-card__badge">BASE</span>
-              <img src="https://baseec-img-mng.akamaized.net/images/item/origin/b0a0a38f01f091193f7fca95696608a4.jpg" alt="関数アートクリアファイル " loading="lazy" decoding="async" />
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">関数アートクリアファイル </h3>
-              <p class="product-card__desc">落ち着いたに関数アートを散りばめた一枚。日々の資料整理に数学の余韻を。</p>
-              <div class="product-card__highlights">
-                <span class="product-card__tag">深い青のクリアファイル</span>
-                <span class="product-card__tag">おしゃれで普段使いができる</span>
-                <span class="product-card__tag">控えめなデザイン</span>
-              </div>
-              <div class="product-card__meta">
-                <span class="product-card__price"><span class="product-card__currency">¥</span><span class="product-card__amount">550</span></span>
-                <span class="product-card__availability">在庫あり</span>
-              </div>
-              <a class="product-card__cta" href="https://mathgraphart.base.shop/items/98751339" target="_blank" rel="noopener">BASEで詳しく見る <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span></a>
-            </div>
-          </article>
-          <article class="product-card">
-            <div class="product-card__media">
-              <span class="product-card__badge">BASE</span>
-              <img src="https://baseec-img-mng.akamaized.net/images/item/origin/c992ace83fa68c96baa46042db0060a7.png" alt="関数アートしおり" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">関数アートしおり</h3>
-              <p class="product-card__desc">ページを開くたびに数式がひらめく、読書の相棒。手軽にアートを持ち歩けます。</p>
-              <div class="product-card__highlights">
-                <span class="product-card__tag">数式が本と映える</span>
-                <span class="product-card__tag">多くの関数と出会える</span>
-                <span class="product-card__tag">普段使い出来る</span>
-              </div>
-              <div class="product-card__meta">
-                <span class="product-card__price"><span class="product-card__currency">¥</span><span class="product-card__amount">200</span></span>
-                <span class="product-card__availability">在庫あり</span>
-              </div>
-              <a class="product-card__cta" href="https://mathgraphart.base.shop/items/110309269" target="_blank" rel="noopener">BASEで詳しく見る <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span></a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-card__media">
-              <span class="product-card__badge">BOOTH</span>
-              <img src="https://booth.pximg.net/c/300x300_a2_g5/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5670728/fbaf2091-e67d-403d-98eb-1b2273604b84_base_resized.jpg" alt="関数アートタンブラー" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">関数アートタンブラー</h3>
-              <p class="product-card__desc">36個の関数アートをあしらったタンブラー</p>
-              <div class="product-card__highlights">
-                <span class="product-card__tag">シンプルな</span>
-                <span class="product-card__tag">持ち歩く</span>
-                <span class="product-card__tag">かわいい</span>
-              </div>
-              <div class="product-card__meta">
-                <span class="product-card__price"><span class="product-card__currency">¥</span><span class="product-card__amount">1,820</span></span>
-                <span class="product-card__availability">在庫あり</span>
-              </div>
-              <a class="product-card__cta" href="https://mathgraphart.booth.pm/items/5670728" target="_blank" rel="noopener">BOOTHで詳しく見る <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span></a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-card__media">
-              <span class="product-card__badge">BOOTH</span>
-              <img src="https://booth.pximg.net/c/300x300_a2_g5/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5687415/cc81b73c-cabd-4c86-9629-aec20505bcca_base_resized.jpg" alt="新関数アートサーバアイコン キーホルダー" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">新関数アートサーバアイコン キーホルダー</h3>
-              <p class="product-card__desc">2年半記念として更新されたDiscordサーバーのアイコンキーホルダー</p>
-              <div class="product-card__highlights">
-                <span class="product-card__tag">アイコン</span>
-                <span class="product-card__tag">かわいいロゴ</span>
-                <span class="product-card__tag">Discord</span>
-              </div>
-              <div class="product-card__meta">
-                <span class="product-card__price"><span class="product-card__currency">¥</span><span class="product-card__amount">700</span></span>
-                <span class="product-card__availability">在庫あり</span>
-              </div>
-              <a class="product-card__cta" href="https://mathgraphart.booth.pm/items/5687415" target="_blank" rel="noopener">BOOTHで詳しく見る <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span></a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-card__media">
-              <span class="product-card__badge">BOOTH</span>
-              <img src="https://booth.pximg.net/c/300x300_a2_g5/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5480226/7d9cb386-b280-4a73-b733-d382d9bb5328_base_resized.jpg" alt="関数アートトートバッグ" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">関数アートトートバッグ</h3>
-              <p class="product-card__desc">|x-y|+||x+y+|x|-x|≦1 を満たす関数アートが敷き詰められたデザインのトートバッグ</p>
-              <div class="product-card__highlights">
-                <span class="product-card__tag">持ち歩く</span>
-                <span class="product-card__tag">敷き詰め</span>
-                <span class="product-card__tag">数式を愛す</span>
-              </div>
-              <div class="product-card__meta">
-                <span class="product-card__price"><span class="product-card__currency">¥</span><span class="product-card__amount">1,930</span></span>
-                <span class="product-card__availability">在庫あり</span>
-              </div>
-              <a class="product-card__cta" href="https://mathgraphart.booth.pm/items/5480226" target="_blank" rel="noopener">BOOTHで詳しく見る <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span></a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-card__media">
-              <span class="product-card__badge">BOOTH</span>
-              <img src="https://booth.pximg.net/c/300x300_a2_g5/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5667525/24023c42-fa9e-4245-9b70-831de3357c27_base_resized.jpg" alt="関数アートマグカップ" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">関数アートマグカップ</h3>
-              <p class="product-card__desc">55個の関数アートがあしらわれたマグカップ</p>
-              <div class="product-card__highlights">
-                <span class="product-card__tag">シンプルな</span>
-                <span class="product-card__tag">大量の数式</span>
-                <span class="product-card__tag">コップ</span>
-              </div>
-              <div class="product-card__meta">
-                <span class="product-card__price"><span class="product-card__currency">¥</span><span class="product-card__amount">2,150</span></span>
-                <span class="product-card__availability">在庫あり</span>
-              </div>
-              <a class="product-card__cta" href="https://mathgraphart.booth.pm/items/5667525" target="_blank" rel="noopener">BOOTHで詳しく見る <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span></a>
-            </div>
-          </article>
-
-          <!-- duplicate set for seamless marquee -->
-          <article class="product-card" aria-hidden="true">
-            <div class="product-card__media">
-              <span class="product-card__badge">BASE</span>
-              <img src="https://baseec-img-mng.akamaized.net/images/item/origin/1c3eaa48e34e084d03c5d8367b837c5f.jpg" alt="" />
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">ガチ勢が集めた関数アートかるた</h3>
-              <p class="product-card__desc">100超から厳選した32枚のカルタで、遊びながら関数アートの着想を広げられます。</p>
-              <div class="product-card__highlights">
-                <span class="product-card__tag">日本の伝統文化</span>
-                <span class="product-card__tag">数学かるた</span>
-                <span class="product-card__tag">関数かるた</span>
-              </div>
-              <div class="product-card__meta">
-                <span class="product-card__price"><span class="product-card__currency">¥</span><span class="product-card__amount">1,500</span></span>
-                <span class="product-card__availability">在庫あり</span>
-              </div>
-              <a class="product-card__cta" href="https://mathgraphart.base.shop/items/98751389" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">BASEで詳しく見る <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span></a>
-            </div>
-          </article>
-          <article class="product-card" aria-hidden="true">
-            <div class="product-card__media">
-              <span class="product-card__badge">BASE</span>
-              <img src="https://baseec-img-mng.akamaized.net/images/item/origin/b0a0a38f01f091193f7fca95696608a4.jpg" alt="" />
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">関数アートクリアファイル </h3>
-              <p class="product-card__desc">落ち着いたに関数アートを散りばめた一枚。日々の資料整理に数学の余韻を。</p>
-              <div class="product-card__highlights">
-                <span class="product-card__tag">深い青のクリアファイル</span>
-                <span class="product-card__tag">おしゃれで普段使いができる</span>
-                <span class="product-card__tag">控えめなデザイン</span>
-              </div>
-              <div class="product-card__meta">
-                <span class="product-card__price"><span class="product-card__currency">¥</span><span class="product-card__amount">550</span></span>
-                <span class="product-card__availability">在庫あり</span>
-              </div>
-              <a class="product-card__cta" href="https://mathgraphart.base.shop/items/98751339" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">BASEで詳しく見る <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span></a>
-            </div>
-          </article>
-          <article class="product-card" aria-hidden="true">
-            <div class="product-card__media">
-              <span class="product-card__badge">BASE</span>
-              <img src="https://baseec-img-mng.akamaized.net/images/item/origin/c992ace83fa68c96baa46042db0060a7.png" alt="" />
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">関数アートしおり</h3>
-              <p class="product-card__desc">ページを開くたびに数式がひらめく、読書の相棒。手軽にアートを持ち歩けます。</p>
-              <div class="product-card__highlights">
-                <span class="product-card__tag">数式が本と映える</span>
-                <span class="product-card__tag">多くの関数と出会える</span>
-                <span class="product-card__tag">普段使い出来る</span>
-              </div>
-              <div class="product-card__meta">
-                <span class="product-card__price"><span class="product-card__currency">¥</span><span class="product-card__amount">200</span></span>
-                <span class="product-card__availability">在庫あり</span>
-              </div>
-              <a class="product-card__cta" href="https://mathgraphart.base.shop/items/110309269" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">BASEで詳しく見る <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span></a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-card__media">
-              <span class="product-card__badge">BOOTH</span>
-              <img src="https://booth.pximg.net/c/300x300_a2_g5/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5670728/fbaf2091-e67d-403d-98eb-1b2273604b84_base_resized.jpg" alt="関数アートタンブラー" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">関数アートタンブラー</h3>
-              <p class="product-card__desc">36個の関数アートをあしらったタンブラー</p>
-              <div class="product-card__highlights">
-                <span class="product-card__tag">シンプルな</span>
-                <span class="product-card__tag">持ち歩く</span>
-                <span class="product-card__tag">かわいい</span>
-              </div>
-              <div class="product-card__meta">
-                <span class="product-card__price"><span class="product-card__currency">¥</span><span class="product-card__amount">1,820</span></span>
-                <span class="product-card__availability">在庫あり</span>
-              </div>
-              <a class="product-card__cta" href="https://mathgraphart.booth.pm/items/5670728" target="_blank" rel="noopener">BOOTHで詳しく見る <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span></a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-card__media">
-              <span class="product-card__badge">BOOTH</span>
-              <img src="https://booth.pximg.net/c/300x300_a2_g5/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5687415/cc81b73c-cabd-4c86-9629-aec20505bcca_base_resized.jpg" alt="新関数アートサーバアイコン キーホルダー" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">新関数アートサーバアイコン キーホルダー</h3>
-              <p class="product-card__desc">2年半記念として更新されたDiscordサーバーのアイコンキーホルダー</p>
-              <div class="product-card__highlights">
-                <span class="product-card__tag">アイコン</span>
-                <span class="product-card__tag">かわいいロゴ</span>
-                <span class="product-card__tag">Discord</span>
-              </div>
-              <div class="product-card__meta">
-                <span class="product-card__price"><span class="product-card__currency">¥</span><span class="product-card__amount">700</span></span>
-                <span class="product-card__availability">在庫あり</span>
-              </div>
-              <a class="product-card__cta" href="https://mathgraphart.booth.pm/items/5687415" target="_blank" rel="noopener">BOOTHで詳しく見る <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span></a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-card__media">
-              <span class="product-card__badge">BOOTH</span>
-              <img src="https://booth.pximg.net/c/300x300_a2_g5/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5480226/7d9cb386-b280-4a73-b733-d382d9bb5328_base_resized.jpg" alt="関数アートトートバッグ" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">関数アートトートバッグ</h3>
-              <p class="product-card__desc">|x-y|+||x+y+|x|-x|≦1 を満たす関数アートが敷き詰められたデザインのトートバッグ</p>
-              <div class="product-card__highlights">
-                <span class="product-card__tag">持ち歩く</span>
-                <span class="product-card__tag">敷き詰め</span>
-                <span class="product-card__tag">数式を愛す</span>
-              </div>
-              <div class="product-card__meta">
-                <span class="product-card__price"><span class="product-card__currency">¥</span><span class="product-card__amount">1,930</span></span>
-                <span class="product-card__availability">在庫あり</span>
-              </div>
-              <a class="product-card__cta" href="https://mathgraphart.booth.pm/items/5480226" target="_blank" rel="noopener">BOOTHで詳しく見る <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span></a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-card__media">
-              <span class="product-card__badge">BOOTH</span>
-              <img src="https://booth.pximg.net/c/300x300_a2_g5/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5667525/24023c42-fa9e-4245-9b70-831de3357c27_base_resized.jpg" alt="関数アートマグカップ" loading="lazy" decoding="async" />
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">関数アートマグカップ</h3>
-              <p class="product-card__desc">55個の関数アートがあしらわれたマグカップ</p>
-              <div class="product-card__highlights">
-                <span class="product-card__tag">シンプルな</span>
-                <span class="product-card__tag">大量の数式</span>
-                <span class="product-card__tag">コップ</span>
-              </div>
-              <div class="product-card__meta">
-                <span class="product-card__price"><span class="product-card__currency">¥</span><span class="product-card__amount">2,150</span></span>
-                <span class="product-card__availability">在庫あり</span>
-              </div>
-              <a class="product-card__cta" href="https://mathgraphart.booth.pm/items/5667525" target="_blank" rel="noopener">BOOTHで詳しく見る <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span></a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-      <div class="page__nav"><button class="btn" data-action="next">次へ</button></div>
-    </section>
-    
-    <!-- Page 8: まとめ / クロージング -->
-    <section class="page page--summary" data-page="8" aria-label="まとめ">
-      <div class="page__index">08</div>
-      <h2 class="page__title">まとめ — はじめの一歩</h2>
-      <div class="summary__wrap">
-        <p class="summary__lead">ここまで、世界のトップランナーたちが創り上げた美しい数学アートのギャラリーを眺め、基礎的な関数の扱い方を学べる入門動画を見てきたことでしょう。</p>
-        <p class="summary__lead">もう、見る専門でいるのは終わりです。関数アートの世界は、教科書や単なる計算練習とは一線を画す、創造性を刺激するクリエイティブな表現の場です。</p>
-        <p class="summary__lead">
-          まずは、特に心惹かれた作品をもう一度じっくりと眺め、どんな数式が使われているのか想像してみてください。次に、Desmosグラフ計算機を開いて、実際にパラメーターをいじり、あなたの手で形をコントロールする楽しさを体験しましょう。
-        </p>
-        <p class="summary__lead">
-          そして、少しでも「これ面白いかも」「ここがわからない！」と感じたら、迷わずコミュニティに参加してください。同じ興味を持った仲間が、きっとあなたの次のアイデアを後押ししてくれます。さあ、あなたも数式を自分の表現手段にしましょう！
-        </p>
-      </div>
-      <div class="page__nav"><button class="btn" data-action="home" aria-label="トップに戻る">トップに戻る</button></div>
-    </section>
-  </main>
-
-  <!-- モーダル -->
-  <dialog id="modal" class="modal">
-    <button class="modal__close" aria-label="閉じる">
-      <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M4.5 4.5 L19.5 19.5 M4.5 19.5 L19.5 4.5" fill="none" stroke="currentColor" stroke-width="1.2"
-          stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </button>
-    <div class="modal__content">
-      <h3 id="modalTitle"></h3>
-      <img id="modalThumb" class="modal__thumb" alt="thumbnail" />
-      <p id="modalBody"></p>
-      <p id="modalNote" class="modal__note"></p>
+<!-- WORKS -->
+<section id="works">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="label">Latest Posts</p><h2>最新の投稿</h2></div>
+      <p class="sec-note">YouTubeに投稿したてのShorts。数式そのものは<a href="https://www.desmos.com/art?lang=ja" target="_blank" rel="noopener">Desmosギャラリー</a>に置いてある。</p>
     </div>
-  </dialog>
+    <div class="works-grid">
+      <!-- POSTS:START -->
+      <a class="work s6 vfeat vid reveal" href="https://www.youtube.com/watch?v=0-DdSGr6JjE" target="_blank" rel="noopener">
+        <span class="media a169"><img src="https://i.ytimg.com/vi/0-DdSGr6JjE/maxresdefault.jpg" alt="ギャラリービューの公開の仕方" loading="lazy"></span>
+        <span class="cap"><b><span class="idx">11.22</span>ギャラリービューの公開の仕方</b><span class="go">YOUTUBE &#8599;</span></span>
+      </a>
+      <a class="work s2 vid reveal" href="https://www.youtube.com/watch?v=AAlDPnPf98Y" target="_blank" rel="noopener">
+        <span class="media a169"><img src="https://i.ytimg.com/vi/AAlDPnPf98Y/maxresdefault.jpg" alt="Notebookって新しい機能知ってる?" loading="lazy"></span>
+        <span class="cap"><b><span class="idx">11.21</span>Notebookって新しい機能知ってる?</b><span class="go">YOUTUBE &#8599;</span></span>
+      </a>
+      <a class="work s2 vid reveal" href="https://www.youtube.com/watch?v=3zmAMdTdZG0" target="_blank" rel="noopener">
+        <span class="media a169"><img src="https://i.ytimg.com/vi/3zmAMdTdZG0/maxresdefault.jpg" alt="東大の学園祭の関数アートを見に行こう!" loading="lazy"></span>
+        <span class="cap"><b><span class="idx">11.20</span>東大の学園祭の関数アートを見に行こう!</b><span class="go">YOUTUBE &#8599;</span></span>
+      </a>
+      <a class="work s2 vid reveal" href="https://www.youtube.com/watch?v=35gK4m6xvoI" target="_blank" rel="noopener">
+        <span class="media a169"><img src="https://i.ytimg.com/vi/35gK4m6xvoI/maxresdefault.jpg" alt="極座標を拡張。球座標を見てみよう" loading="lazy"></span>
+        <span class="cap"><b><span class="idx">11.18</span>極座標を拡張。球座標を見てみよう</b><span class="go">YOUTUBE &#8599;</span></span>
+      </a>
+      <a class="work s2 vid reveal" href="https://www.youtube.com/watch?v=nCgLdN7b-hE" target="_blank" rel="noopener">
+        <span class="media a169"><img src="https://i.ytimg.com/vi/nCgLdN7b-hE/maxresdefault.jpg" alt="3Dには座標から色を作れる機能がある" loading="lazy"></span>
+        <span class="cap"><b><span class="idx">11.15</span>3Dには座標から色を作れる機能がある</b><span class="go">YOUTUBE &#8599;</span></span>
+      </a>
+      <a class="work s2 vid reveal" href="https://www.youtube.com/watch?v=WB8QEFWSQq4" target="_blank" rel="noopener">
+        <span class="media a169"><img src="https://i.ytimg.com/vi/WB8QEFWSQq4/maxresdefault.jpg" alt="2026年の駒場祭は関数アートがある" loading="lazy"></span>
+        <span class="cap"><b><span class="idx">11.14</span>2026年の駒場祭は関数アートがある</b><span class="go">YOUTUBE &#8599;</span></span>
+      </a>
+      <a class="work s2 vid reveal" href="https://www.youtube.com/watch?v=4mdXtcbMQh4" target="_blank" rel="noopener">
+        <span class="media a169"><img src="https://i.ytimg.com/vi/4mdXtcbMQh4/maxresdefault.jpg" alt="一引数の色関数とは？" loading="lazy"></span>
+        <span class="cap"><b><span class="idx">11.11</span>一引数の色関数とは？</b><span class="go">YOUTUBE &#8599;</span></span>
+      </a>
+      <!-- POSTS:END -->
+    </div>
+  </div>
+</section>
 
-  <script src="assets/main.js"></script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<!-- HUB -->
+<section id="hub" style="padding-top:clamp(52px,7.5vw,96px)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="label">Watch / Join / Buy</p><h2>観る・集まる・買う</h2></div>
+      <p class="sec-note">動画も、居場所も、グッズも、ここに全部ある。</p>
+    </div>
+    <div class="bento">
+      <a class="tile big reveal" href="https://www.youtube.com/playlist?list=PLFtMcegIwb42WjnDgwNYPl0hDzrGe_pGZ" target="_blank" rel="noopener" aria-label="入門再生リストを開く">
+        <img src="https://i.ytimg.com/vi/jn11n_hRMRg/hqdefault.jpg" alt="入門動画のサムネイル" loading="lazy">
+        <span class="playb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.8v16.4c0 .9 1 1.5 1.8 1L21 13a1.2 1.2 0 0 0 0-2L7.8 2.9C7 2.4 6 2.9 6 3.8z"/></svg></span>
+        <span class="tcap"><span class="tk">YOUTUBE — 再生リスト</span><b>数式をアートに変える、最初の授業。</b><small>一次関数・二次関数・楕円で描く</small></span>
+      </a>
+      <a class="tile reveal" href="https://www.youtube.com/@TETH_Main/shorts" target="_blank" rel="noopener">
+        <img src="https://i.ytimg.com/vi/wHolo3aUtKE/hqdefault.jpg" alt="Shortsデモ（縦）" loading="lazy" style="object-fit:contain;background:#000">
+        <span class="tcap"><span class="tk">SHORTS</span><b>30秒でわかる関数アートの世界</b></span>
+      </a>
+      <a class="tile reveal" href="https://discord.gg/298vPa6re7" target="_blank" rel="noopener">
+        <img src="https://pbs.twimg.com/ext_tw_video_thumb/1576882459378995201/pu/img/nVEck3zFS48kfffc.jpg" alt="関数アートコミュニティ" loading="lazy">
+        <span class="tcap"><span class="tk">DISCORD</span><b>関数アートサーバー</b><small>質問も雑談も（13歳以上）</small></span>
+      </a>
+      <a class="tile wide2 reveal" href="https://www.youtube.com/watch?v=1IcMlf7pQQ0" target="_blank" rel="noopener">
+        <img src="https://i.ytimg.com/vi/1IcMlf7pQQ0/hqdefault.jpg" alt="関数アートデモ" loading="lazy">
+        <span class="playb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.8v16.4c0 .9 1 1.5 1.8 1L21 13a1.2 1.2 0 0 0 0-2L7.8 2.9C7 2.4 6 2.9 6 3.8z"/></svg></span>
+        <span class="tcap"><span class="tk">DEMO</span><b>関数アートデモ</b></span>
+      </a>
+      </div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section id="shop" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="label">Shop</p><h2>グッズ</h2></div>
+      <p class="sec-note">数式から生まれたグッズ。BASEとBOOTHで販売中。</p>
+    </div>
+    <div class="shop-grid">
+      <!-- SHOP-BASE:START -->
+      <a class="product reveal" href="https://mathgraphart.base.shop/items/164104987" target="_blank" rel="noopener">
+        <span class="pimg"><img src="https://baseec-img-mng.akamaized.net/images/item/origin/5961edd41ccf9e1002b07795fee28813.jpg" alt="レーザー彫刻パネル" loading="lazy"></span>
+        <span class="store">BASE</span><h3>レーザー彫刻パネル</h3>
+        <p class="price">¥1,000<small>在庫あり</small></p>
+      </a>
+      <a class="product reveal" href="https://mathgraphart.base.shop/items/146511899" target="_blank" rel="noopener">
+        <span class="pimg"><img src="https://baseec-img-mng.akamaized.net/images/item/origin/8133d64685f5345b81150aa24bc2f676.jpg" alt="ふきちょくキーホルダー" loading="lazy"></span>
+        <span class="store">BASE</span><h3>ふきちょくキーホルダー</h3>
+        <p class="price">¥500<small>在庫あり</small></p>
+      </a>
+      <a class="product reveal" href="https://mathgraphart.base.shop/items/110309269" target="_blank" rel="noopener">
+        <span class="pimg"><img src="https://baseec-img-mng.akamaized.net/images/item/origin/554c31484d91d3cc197c5af990de63ca.png" alt="関数アートしおり" loading="lazy"></span>
+        <span class="store">BASE</span><h3>関数アートしおり</h3>
+        <p class="price">¥200<small>在庫あり</small></p>
+      </a>
+      <a class="product reveal" href="https://mathgraphart.base.shop/items/98751389" target="_blank" rel="noopener">
+        <span class="pimg"><img src="https://baseec-img-mng.akamaized.net/images/item/origin/1c3eaa48e34e084d03c5d8367b837c5f.jpg" alt="ガチ勢が集めた関数アートかるた" loading="lazy"></span>
+        <span class="store">BASE</span><h3>ガチ勢が集めた関数アートかるた</h3>
+        <p class="price">¥1,500<small>在庫あり</small></p>
+      </a>
+      <a class="product reveal" href="https://mathgraphart.base.shop/items/98751339" target="_blank" rel="noopener">
+        <span class="pimg"><img src="https://baseec-img-mng.akamaized.net/images/item/origin/b0a0a38f01f091193f7fca95696608a4.jpg" alt="関数アート クリアファイル" loading="lazy"></span>
+        <span class="store">BASE</span><h3>関数アート クリアファイル</h3>
+        <p class="price">¥400<small>在庫あり</small></p>
+      </a>
+      <!-- SHOP-BASE:END -->
+      <!-- SHOP-BOOTH:START -->
+      <a class="product reveal" href="https://mathgraphart.booth.pm/items/5687433" target="_blank" rel="noopener">
+        <span class="pimg"><img src="https://booth.pximg.net/c/620x620/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5687433/b2dec290-ca88-46b5-aedf-39e6d39d6cb4_base_resized.jpg" alt="新関数アートサーバアイコン ステッカー" loading="lazy"></span>
+        <span class="store">BOOTH</span><h3>新関数アートサーバアイコン ステッカー</h3>
+        <p class="price">¥820<small>在庫あり</small></p>
+      </a>
+      <a class="product reveal" href="https://mathgraphart.booth.pm/items/5687415" target="_blank" rel="noopener">
+        <span class="pimg"><img src="https://booth.pximg.net/c/620x620/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5687415/cc81b73c-cabd-4c86-9629-aec20505bcca_base_resized.jpg" alt="新関数アートサーバアイコン キーホルダー" loading="lazy"></span>
+        <span class="store">BOOTH</span><h3>新関数アートサーバアイコン キーホルダー</h3>
+        <p class="price">¥930<small>在庫あり</small></p>
+      </a>
+      <a class="product reveal" href="https://mathgraphart.booth.pm/items/5674681" target="_blank" rel="noopener">
+        <span class="pimg"><img src="https://booth.pximg.net/c/620x620/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5674681/2e0702a6-7e7d-49ba-b967-4978bebd11ca_base_resized.jpg" alt="関数アート透明ステッカー" loading="lazy"></span>
+        <span class="store">BOOTH</span><h3>関数アート透明ステッカー</h3>
+        <p class="price">¥870<small>在庫あり</small></p>
+      </a>
+      <a class="product reveal" href="https://mathgraphart.booth.pm/items/5670728" target="_blank" rel="noopener">
+        <span class="pimg"><img src="https://booth.pximg.net/c/620x620/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5670728/fbaf2091-e67d-403d-98eb-1b2273604b84_base_resized.jpg" alt="関数アート タンブラー" loading="lazy"></span>
+        <span class="store">BOOTH</span><h3>関数アート タンブラー</h3>
+        <p class="price">¥1,820<small>在庫あり</small></p>
+      </a>
+      <a class="product reveal" href="https://mathgraphart.booth.pm/items/5667525" target="_blank" rel="noopener">
+        <span class="pimg"><img src="https://booth.pximg.net/c/620x620/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5667525/24023c42-fa9e-4245-9b70-831de3357c27_base_resized.jpg" alt="関数アート マグカップ" loading="lazy"></span>
+        <span class="store">BOOTH</span><h3>関数アート マグカップ</h3>
+        <p class="price">¥2,150<small>在庫あり</small></p>
+      </a>
+      <a class="product reveal" href="https://mathgraphart.booth.pm/items/5667197" target="_blank" rel="noopener">
+        <span class="pimg"><img src="https://booth.pximg.net/c/620x620/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5667197/bcfcc001-53c5-4e4e-977f-cece6171871b_base_resized.jpg" alt="アイコン風 関数アート トートバッグ" loading="lazy"></span>
+        <span class="store">BOOTH</span><h3>アイコン風 関数アート トートバッグ</h3>
+        <p class="price">¥1,930〜<small>在庫あり</small></p>
+      </a>
+      <a class="product reveal" href="https://mathgraphart.booth.pm/items/5667167" target="_blank" rel="noopener">
+        <span class="pimg"><img src="https://booth.pximg.net/c/620x620/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5667167/efe17b72-02a0-420e-9e87-0d4325a9df83_base_resized.jpg" alt="アイコン風 関数アート ブラック Tシャツ" loading="lazy"></span>
+        <span class="store">BOOTH</span><h3>アイコン風 関数アート ブラック Tシャツ</h3>
+        <p class="price">¥3,500<small>在庫あり</small></p>
+      </a>
+      <a class="product reveal" href="https://mathgraphart.booth.pm/items/5667161" target="_blank" rel="noopener">
+        <span class="pimg"><img src="https://booth.pximg.net/c/620x620/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5667161/a0a54898-b234-420f-8d62-57622e3658ab_base_resized.jpg" alt="アイコン風 関数アート Tシャツ" loading="lazy"></span>
+        <span class="store">BOOTH</span><h3>アイコン風 関数アート Tシャツ</h3>
+        <p class="price">¥2,150〜<small>在庫あり</small></p>
+      </a>
+      <a class="product reveal" href="https://mathgraphart.booth.pm/items/5480226" target="_blank" rel="noopener">
+        <span class="pimg"><img src="https://booth.pximg.net/c/620x620/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5480226/7d9cb386-b280-4a73-b733-d382d9bb5328_base_resized.jpg" alt="LOVE A FUNCTION 関数アート トートバッグ" loading="lazy"></span>
+        <span class="store">BOOTH</span><h3>LOVE A FUNCTION 関数アート トートバッグ</h3>
+        <p class="price">¥1,930<small>在庫あり</small></p>
+      </a>
+      <a class="product reveal" href="https://mathgraphart.booth.pm/items/5447453" target="_blank" rel="noopener">
+        <span class="pimg"><img src="https://booth.pximg.net/c/620x620/db96a3f6-34e5-4332-a4f4-ad3075520775/i/5447453/67c635fc-b19b-44f9-812e-bc4fbacef8e6_base_resized.jpg" alt="関数アートサーバキーホルダー" loading="lazy"></span>
+        <span class="store">BOOTH</span><h3>関数アートサーバキーホルダー</h3>
+        <p class="price">¥880<small>在庫あり</small></p>
+      </a>
+      <!-- SHOP-BOOTH:END -->
+      </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div class="about-band" id="about">
+  <div class="wrap about-in">
+    <img class="av" src="https://yt3.ggpht.com/n-e75Oi3Cp7kq2De8A0aWMfwVbJTl_TY45nQ56jcc1Smi5en961O_Qu5QjuRzWQLJMlcM82SOw=s68-c-k-c0x00ffffff-no-rj" alt="てきちょくのチャンネルアイコン" loading="lazy">
+    <div class="who"><b>てきちょく / TETH_Main</b><span>関数アート作家</span></div>
+    <p class="line">学校で習う関数だけで絵を描く。作り方は動画で全部公開中。</p>
+    <div class="snsrow">
+      <a href="https://www.youtube.com/@TETH_Main" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://x.com/TETH_Main" target="_blank" rel="noopener">X</a>
+      <a href="https://mathgraphart.base.shop/" target="_blank" rel="noopener">BASE</a>
+      <a href="https://mathgraphart.booth.pm/" target="_blank" rel="noopener">BOOTH</a>
+      <a href="https://www.desmos.com/calculator/a507a39c01?lang=ja" target="_blank" rel="noopener">ロゴのグラフ</a>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="foot-word">関数アート</p>
+    <div class="foot-cols">
+      <div>
+        <h4>CONTENTS</h4>
+        <a href="#works">作品</a><a href="#hub">動画・コミュニティ</a><a href="#shop">グッズ</a><a href="#about">作者</a>
+      </div>
+      <div>
+        <h4>FOLLOW</h4>
+        <a href="https://www.youtube.com/@TETH_Main" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://x.com/TETH_Main" target="_blank" rel="noopener">X</a>
+        <a href="https://mathgraphart.base.shop/" target="_blank" rel="noopener">BASE</a>
+        <a href="https://mathgraphart.booth.pm/" target="_blank" rel="noopener">BOOTH</a>
+        <a href="https://discord.gg/298vPa6re7" target="_blank" rel="noopener">Discord</a>
+      </div>
+      <div>
+        <h4>ABOUT</h4>
+        <p>数式だけで絵を描く「関数アート」のサイト。数式はDesmosに、グッズはBASEとBOOTHに置いてある。</p>
+      </div>
+    </div>
+    <div class="copyright"><span>© <span id="year">2026</span> TEKICHOKU / TETH_Main</span><span>f(x) = ART</span></div>
+  </div>
+</footer>
+
+<nav class="tabbar" aria-label="モバイルナビゲーション">
+  <a href="#top" class="on" aria-label="トップ"><svg viewBox="0 0 24 24"><path d="M4 11.2 12 4l8 7.2"/><path d="M6.2 9.8V20h11.6V9.8"/></svg></a>
+  <a href="#works" aria-label="作品"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg></a>
+  <a href="#hub" aria-label="動画"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.5"/><path d="M10.3 9.6v4.8c0 .6.7 1 1.2.7l4-2.4c.5-.3.5-1 0-1.3l-4-2.4c-.5-.3-1.2.1-1.2.6z" fill="currentColor" stroke="none"/></svg></a>
+  <a href="#shop" aria-label="グッズ"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 11a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M8.5 10V6.5a3.5 3.5 0 0 1 7 0V10"/></svg></a>
+  <a href="#about" aria-label="作者"><img src="https://yt3.ggpht.com/n-e75Oi3Cp7kq2De8A0aWMfwVbJTl_TY45nQ56jcc1Smi5en961O_Qu5QjuRzWQLJMlcM82SOw=s68-c-k-c0x00ffffff-no-rj" alt="てきちょく"></a>
+</nav>
+
+<script>
+(function(){
+"use strict";
+const $$=s=>[...document.querySelectorAll(s)];
+document.querySelector("#year").textContent=new Date().getFullYear();
+
+/* ticker */
+const words=["関数アート","MATH GRAPH ART","DESMOS","YOUTUBE","SHORTS","DISCORD","BASE","BOOTH","TEKICHOKU"];
+const group=words.map(w=>`<span>${w} <b>×</b></span>`).join("");
+document.querySelector("#tickerTrack").innerHTML=group+group+group+group;
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.08});
+$$(".reveal").forEach(el=>io.observe(el));
+
+/* tab bar active */
+const tabs=$$(".tabbar a");
+const map={"top":0,"works":1,"hub":2,"shop":3,"about":4};
+const io2=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){ tabs.forEach(t=>t.classList.remove("on")); const i=map[e.target.id]; if(i!=null) tabs[i].classList.add("on"); }
+}),{rootMargin:"-40% 0px -50% 0px"});
+["top","works","hub","shop","about"].forEach(id=>{const el=document.getElementById(id); if(el) io2.observe(el)});
+
+})();
+</script>
 </body>
-
 </html>
